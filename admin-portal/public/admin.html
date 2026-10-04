@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex"><title>Hemalatha Vegetables · Owner Portal</title>
+<link rel="stylesheet" href="admin.css"></head><body>
+<main id="login" class="login" hidden>
+  <form id="loginForm" class="sheet" autocomplete="off">
+    <h1>Hemalatha Vegetables</h1><p class="sub">Owner portal. Sign in to see live orders and send or verify customer OTPs.</p>
+    <label>Owner mobile<input id="lp" inputmode="numeric" maxlength="10" autocomplete="username" required></label>
+    <label>Password<input id="lw" type="password" autocomplete="current-password" required></label>
+    <p id="le" class="err" role="alert"></p><button class="btn">Sign in</button>
+  </form>
+</main>
+<div id="app" hidden>
+  <header><b>Hemalatha Owner Portal</b><span><span id="live" class="live" title="Live order feed"></span><button id="theme" class="ghost" aria-label="Toggle dark mode">Theme</button></span></header>
+  <nav id="nav"><a href="#dashboard">Dashboard</a><a href="#orders">Orders <i id="nbadge" class="badge" hidden></i></a><a href="#generate">OTP</a><a href="#verify">Verify</a><a href="#history">History</a><a href="#settings">Settings</a></nav>
+  <main>
+    <section id="dashboard"><h2>Today</h2><div class="stats" id="stats"></div>
+      <h3>Latest orders</h3><div id="recent" class="list"></div></section>
+    <section id="orders"><h2>Live orders</h2>
+      <div class="chips" id="ochips"><button data-f="all" class="on">All</button><button data-f="active">Pending delivery</button><button data-f="completed">Delivered</button></div>
+      <div id="olist" class="list orders"></div></section>
+    <section id="generate"><h2>Generate OTP</h2>
+      <p id="testmode" class="warn" hidden></p>
+      <div class="card"><label>Customer mobile<input id="gp" inputmode="numeric" maxlength="10" placeholder="9876543210"></label>
+      <button id="gen" class="btn">Generate OTP</button></div>
+      <div id="gout" class="card otp" hidden><div id="digits" class="digits"></div><p id="gmeta" class="sub"></p>
+      <button id="send" class="btn">Send OTP by SMS</button></div></section>
+    <section id="verify"><h2>Verify OTP</h2><div class="card">
+      <label>Customer mobile<input id="vp" inputmode="numeric" maxlength="10"></label>
+      <label>OTP from customer<input id="vo" inputmode="numeric" maxlength="6" autocomplete="one-time-code"></label>
+      <button id="ver" class="btn">Verify OTP</button><p id="vr" class="result" role="status"></p></div></section>
+    <section id="history"><h2>OTP history</h2>
+      <div class="chips" id="chips"><button data-r="today" class="on">Today</button><button data-r="yesterday">Yesterday</button><button data-r="7d">Last 7 days</button><button data-r="30d">Last 30 days</button></div>
+      <div id="hist" class="list"></div></section>
+    <section id="settings"><h2>Settings</h2><div class="card" id="cfg"></div>
+      <h3>Audit log</h3><div id="audit" class="list"></div><button id="logout" class="btn danger">Sign out</button></section>
+  </main>
+</div><div id="toast" role="status"></div><script src="admin.js"></script></body></html>

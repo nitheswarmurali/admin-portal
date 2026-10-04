@@ -1,0 +1,10 @@
+{
+  "name": "hemalatha-admin-portal",
+  "version": "1.0.0",
+  "description": "Hemalatha Vegetables - owner admin portal (live orders + OTP). Standalone, no dependencies.",
+  "type": "module",
+  "main": "server.js",
+  "scripts": { "start": "node server.js", "hash": "node scripts/hash.js" },
+  "engines": { "node": ">=18" },
+  "optionalDependencies": { "@supabase/supabase-js": "^2.45.0" }
+}
